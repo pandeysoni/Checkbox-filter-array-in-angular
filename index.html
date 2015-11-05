@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html data-ng-app="App">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body data-ng-controller="TestController">
+        <table id="hotels">
+            <tr>
+                <th>Hotel Name</th>
+                <th>Star Rating</th>
+                <th>Hotel type</th>
+                <th>Hotel Price</th>
+            </tr>
+            <tr data-ng-repeat="hotel in hotels | filter:search.type1 | filter:search.type2">
+                <td>{{hotel.name}}</td>
+                <td>{{hotel.star}}</td>
+                <td>{{hotel.type}}</td>
+                <td>{{hotel.price}}</td>
+            </tr>
+        </table>
+        <br/>
+        <h4>Filters</h4>
+        <input id="type1" type="checkbox" data-ng-model="search.type1" cd-true-value="luxury" cd-false-value="">
+        <label for="type1">Luxury</label> &nbsp;&nbsp;&nbsp;
+        <input id="type2" type="checkbox" data-ng-model="search.type2" cd-true-value="double suite" cd-false-value="">
+        <label for="type2">double suite</label> &nbsp;&nbsp;&nbsp;
+    </body>
+</html>
