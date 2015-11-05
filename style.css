@@ -1,0 +1,67 @@
+/* Styles go here */
+
+body{padding: 5px;}
+#hotels{width: 550px;}
+#hotels tr{height: 30px;}
+#hotels tr td{text-align: center;}
+input[type="checkbox"]:not(:checked),
+input[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+input[type="checkbox"]:not(:checked) + label,
+input[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 25px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+.cb-btn label
+{
+  padding-top: 1px;
+}
+/* checkbox aspect */
+input[type="checkbox"]:not(:checked) + label:before,
+input[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 17px; height: 17px;
+  background: #f8f8f8;
+}
+/* checked mark aspect */
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="checkbox"]:checked + label:after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 0;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  line-height: 0.8;
+  color: #09ad7e;
+  background: red;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+input[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+input[type="checkbox"]:disabled:not(:checked) + label:before,
+input[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+input[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+input[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
